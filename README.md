@@ -66,14 +66,20 @@ Navigate to your git repository and run:
 ghmerge
 ```
 
-The tool will:
-1. Display your current branch as the source
-2. Prompt for PR title (defaults to last commit message)
-3. Prompt for PR description (optional, multiline)
-4. Prompt for destination branch (defaults to "develop")
-5. Push your branch to origin if not already pushed
-6. Create the pull request
-7. Display the PR URL
+The tool will prompt you for:
+1. **PR title** (defaults to last commit message)
+2. **PR description** (optional, multiline with Ctrl+D to finish)
+3. **Destination branch** (defaults to "develop")
+4. **Create as draft?** (Yes/No)
+5. **Labels** (comma-separated, optional)
+6. **Reviewers** (comma-separated, optional)
+7. **Assignees** (comma-separated, optional)
+
+Then it will:
+- Display your current branch as the source
+- Push your branch to origin if not already pushed
+- Create the pull request with all the options you selected
+- Display the PR URL
 
 ### Command-Line Options
 
