@@ -24,6 +24,10 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
-  }
+    "url": "git+https://github.com/praveentcom/ghmerge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/praveentcom/ghmerge/issues"
+  },
+  "homepage": "https://github.com/praveentcom/ghmerge#readme"
 }

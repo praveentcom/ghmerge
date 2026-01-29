@@ -1,14 +1,6 @@
-# ghmerge
+# GitHub Merge Assistant
 
-Interactive CLI tool for creating GitHub pull requests with a delightful terminal UI powered by [gum](https://github.com/charmbracelet/gum).
-
-## Features
-
-- 🎨 Interactive prompts for PR creation
-- 📝 Smart defaults (last commit title, current branch)
-- 🚀 Automatically pushes branch if not on remote
-- ✨ Clean, modern terminal UI
-- 🔧 Zero npm dependencies (uses system tools)
+Interactive CLI tool for creating GitHub pull requests with a delightful terminal UI.
 
 ## Prerequisites
 
