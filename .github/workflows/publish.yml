@@ -7,6 +7,10 @@ on:
     paths:
       - 'package.json'
 
+permissions:
+  contents: write  # Required for creating GitHub releases
+  id-token: write  # Required for OIDC trusted publishing
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -18,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 'lts/*'
           registry-url: 'https://registry.npmjs.org'
 
       - name: Check if version changed
@@ -38,18 +42,14 @@ jobs:
 
       - name: Publish to npm
         if: steps.version-check.outputs.should_publish == 'true'
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish --provenance --access public
 
       - name: Create GitHub Release
         if: steps.version-check.outputs.should_publish == 'true'
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.version-check.outputs.current_version }}
-          release_name: Release v${{ steps.version-check.outputs.current_version }}
+          name: Release v${{ steps.version-check.outputs.current_version }}
           body: |
             Release version ${{ steps.version-check.outputs.current_version }}
 
