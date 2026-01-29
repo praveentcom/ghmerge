@@ -1,0 +1,29 @@
+{
+  "name": "ghmerge",
+  "version": "1.2.0",
+  "description": "Interactive CLI tool for creating GitHub pull requests with gum",
+  "main": "lib/index.js",
+  "bin": {
+    "ghmerge": "./bin/ghmerge.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "github",
+    "pr",
+    "pull-request",
+    "gum",
+    "interactive"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
